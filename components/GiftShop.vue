@@ -1,0 +1,1 @@
+<template><div>GiftPage</div></template>

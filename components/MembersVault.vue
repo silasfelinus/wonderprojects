@@ -1,0 +1,1 @@
+<template><div>VaultPage</div></template>

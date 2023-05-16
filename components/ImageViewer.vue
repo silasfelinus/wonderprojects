@@ -1,0 +1,1 @@
+<template><div>MakeArtPage</div></template>

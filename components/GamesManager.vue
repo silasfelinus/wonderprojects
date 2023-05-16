@@ -1,0 +1,1 @@
+<template><div>GamesPage</div></template>

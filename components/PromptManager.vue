@@ -1,0 +1,1 @@
+<template><div>PromptsPage</div></template>

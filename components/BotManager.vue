@@ -1,0 +1,1 @@
+<template><div>BotPage</div></template>
