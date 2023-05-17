@@ -1,4 +1,4 @@
-// server/api/users.ts
+// server/users.ts
 import { PrismaClient } from '@prisma/client'
 import { IncomingMessage, ServerResponse } from 'http'
 
@@ -6,7 +6,7 @@ const prisma = new PrismaClient()
 
 export default async (req: IncomingMessage, res: ServerResponse) => {
   if (req.method === 'GET') {
-    const users = await prisma.users.findMany()
+    const users = await prisma.user.findMany()
     res.writeHead(200, { 'Content-Type': 'application/json' })
     res.end(JSON.stringify(users))
   } else {

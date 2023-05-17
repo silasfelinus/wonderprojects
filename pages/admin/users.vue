@@ -20,7 +20,7 @@
 
 <script setup lang="ts">
 import { ref, onMounted } from 'vue';
-import { PrismaClient, users as UsersType } from '@prisma/client'
+import { PrismaClient, user as UsersType } from '@prisma/client'
 
 const prisma  = new PrismaClient()
 const userList = ref<UsersType[]>([]);
@@ -30,13 +30,13 @@ const newUser = ref({
 });
 
 onMounted(async () => {
-  userList.value = await prisma.users.findMany();
+  userList.value = await prisma.user.findMany();
 });
 
 const addUser = async (event: Event) => {
   event.preventDefault();
 
-  const user = await prisma.users.create({
+  const user = await prisma.user.create({
     data: {
       name: newUser.value.name,
       email: newUser.value.email
@@ -49,7 +49,7 @@ const addUser = async (event: Event) => {
 };
 
 const updateUser = async (user: UsersType) => {
-  await prisma.users.update({
+  await prisma.user.update({
     where: { id: user.id },
     data: {
       name: user.name,
@@ -59,7 +59,7 @@ const updateUser = async (user: UsersType) => {
 };
 
 const deleteUser = async (user: UsersType) => {
-  await prisma.users.delete({
+  await prisma.user.delete({
     where: { id: user.id }
   });
 

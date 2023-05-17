@@ -17,7 +17,7 @@
   </template>
   
   <script lang="ts">
-import { users } from '@prisma/client'
+import { user } from '@prisma/client'
 
 export default {
   data() {
@@ -29,7 +29,7 @@ export default {
   },
   methods: {
     async register() {
-      const newUser: Partial<users> = {
+      const newUser: Partial<user> = {
         name: this.name,
         email: this.email,
         password: this.password

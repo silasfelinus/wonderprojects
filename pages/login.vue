@@ -6,6 +6,7 @@
         <input v-model="password" type="password" placeholder="Password">
         <button type="submit">Login</button>
       </form>
+      <button @click="$auth.loginWith('google')">Login with Google</button>
     </div>
   </template>
   
